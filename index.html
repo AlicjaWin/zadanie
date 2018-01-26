@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie Predica</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><h1>Brand</h1></a>
+        <input type="search" name="search" value="search" id="search">
+    </header>
+    <main>
+        <section>
+            <h2>Fruits</h2>
+            <ul>
+                <li><a href="#">apple</a></li>
+                <li><a href="#">banana</a></li>
+                <li><a href="#">lemon</a></li>
+                <li><a href="#">peach</a></li>
+                <li><a href="#">coconut</a></li>
+                <li><a href="#">pear</a></li>
+                <li><a href="#">plum</a></li>
+                <li><a href="#">mango</a></li>
+
+            </ul>
+        </section>
+        <section>
+            <h2>Vegetables</h2>
+            <ul>
+                <li><a href="#">corn</a></li>
+                <li><a href="#">celery</a></li>
+                <li><a href="#">onion</a></li>
+                <li><a href="#">carrot</a></li>
+                <li><a href="#">radish</a></li>
+                <li><a href="#">croccoli</a></li>
+                <li><a href="#">tomato</a></li>
+                <li><a href="#">pepper</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Drinks</h2>
+            <ul>
+                <li><a href="#">cola</a></li>
+                <li><a href="#">coffe</a></li>
+                <li><a href="#">lemonade</a></li>
+                <li><a href="#">wine</a></li>
+                <li><a href="#">water</a></li>
+                <li><a href="#">tea</a></li>
+                <li><a href="#">milk</a></li>
+                <li><a href="#">juice</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Sweets</h2>
+            <ul>
+                <li><a href="#">jelly</a></li>
+                <li><a href="#">sweets</a></li>
+                <li><a href="#">chockolate</a></li>
+                <li><a href="#">lolipop</a></li>
+                <li><a href="#">marshmallow</a></li>
+                <li><a href="#">mint</a></li>
+                <li><a href="#">toffee</a></li>
+                <li><a href="#">chewing gum</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Bakery</h2>
+            <ul>
+                <li><a href="#">bread</a></li>
+                <li><a href="#">cookies</a></li>
+                <li><a href="#">buns</a></li>
+                <li><a href="#">croissants</a></li>
+                <li><a href="#">baguettes</a></li>
+                <li><a href="#">rolls</a></li>
+                <li><a href="#">doughnuts</a></li>
+                <li><a href="#">cakes</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Bathroom</h2>
+            <ul>
+                <li><a href="#">soap</a></li>
+                <li><a href="#">toothbrush</a></li>
+                <li><a href="#">tissue</a></li>
+                <li><a href="#">shampoo</a></li>
+                <li><a href="#">lotion</a></li>
+                <li><a href="#">cotton balls</a></li>
+                <li><a href="#">dental flolss</a></li>
+                <li><a href="#">shaving cream</a></li>
+            </ul>
+        </section>
+
+
+
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#search").click(function() {
+                $(this).removeAttr("value");
+
+            });
+            
+            
+            $("#search").keyup(function() {
+                    
+                $("li").show();
+                $("a").show();
+                $("section").hide();
+
+                var inputValue = $(this).val().toLowerCase();
+
+                $("h2").each(function() {
+
+                    var text = $(this).html().toLowerCase();
+                    var searchResult = text.search(inputValue);
+
+                    if (searchResult > -1) {
+                        $(this).parent().show();
+                    } else {
+                        $("li").each(function() {
+                            var text2 = $(this).html().toLowerCase();
+                            var searchResult2 = text2.search(inputValue);
+                            if (searchResult2 > -1) {
+                                $(this).parent().parent().show();
+                                $(this).siblings().hide();
+                                $(this).show();
+                                $(this).children().show;
+                            }
+
+                        });
+
+                    }
+
+                });
+        
+            });
+            
+        });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block; }
+
+body {
+    line-height: 1; }
+
+ol, ul {
+    list-style: none; }
+
+blockquote, q {
+    quotes: none; }
+
+blockquote {
+    &:before, &:after {
+        content: '';
+        content: none; } }
+
+q {
+    &:before, &:after {
+        content: '';
+        content: none; } }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+
+*{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+$black:#383838;
+$green:#009688;
+$light-green:#00af87;
+$dark-green:#004D40;
+$lighter-green:#E0F2F1;
+$dark-white:#fdfdfd;
+$white:#ffffff;
+
+
+
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: $dark-white;
+    color: $black;
+    font-size: 1.1rem;
+}
+
+h1{
+    color:$lighter-green;
+    font-size: 2.6rem;
+    font-family: 'Pacifico', cursive;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    font-weight: 100;
+    &:hover{
+        color:$dark-white;
+    }
+   
+}
+
+h2{
+    color:$dark-green;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+
+}
+
+a{
+    color: $black;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 0.3rem;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    text-decoration: none;
+    &:hover{
+        color:$light-green;
+        
+    }
+}
+
+
+header,main{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    @media (min-width: 576px) {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        
+    }
+}
+header{
+    background-color: $green;
+    width: 100%;
+    padding: 1.5rem 5%;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    @media (min-width: 576px) {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;  
+    }
+    
+}
+main{
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+
+input[type=search]{
+        -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.16), 0 2px 6px rgba(0,0,0,0.23);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.16), 0 2px 6px rgba(0,0,0,0.23);
+        font-size: 1.2rem;
+        height: 3rem;
+        padding: 1rem;
+    border: 1px solid $lighter-green;
+    margin-top: 1rem;
+  
+        @media (min-width: 576px) {
+            margin-top: 0;
+            width:60%;
+            
+        }
+        @media (min-width: 768px) {
+            width:33%;}
+    
+    &::-webkit-search-cancel-button{
+       display: none;
+    }
+     
+    } 
+
+
+
+
+section{
+   
+    padding: 1rem;
+   background-color: $white;
+    margin-bottom: 0.5rem;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    &:hover{
+        -webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+    ul{
+        li{
+            list-style-type:none;
+        }
+    }
+    @media (min-width: 576px) {
+       width: 49.5%;
+       
+    }
+    
+    @media (min-width: 768px) {
+    width:33%;}
+
+}
+
+
